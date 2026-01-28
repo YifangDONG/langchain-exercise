@@ -1,0 +1,110 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langchain-exercise"
+version = "0.1.0"
+description = "Learn LangChain through 12 progressive, test-driven exercises"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "DONG Yifang", email = "learner@langchain.local"}
+]
+keywords = ["langchain", "llm", "ai", "learning", "exercises"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+dependencies = [
+    "langchain-core>=0.1.0",
+    "langchain>=0.1.0",
+    "pydantic>=2.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+providers = [
+    "langchain-openai>=0.1.0",
+    "langchain-anthropic>=0.1.0",
+]
+test = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-mock>=3.12.0",
+]
+dev = [
+    "black>=23.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+    "pytest>=7.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-mock>=3.12.0",
+]
+
+[dependency-groups]
+dev = [
+    "black>=23.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+    "pytest>=7.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-mock>=3.12.0",
+]
+providers = [
+    "langchain-openai>=0.1.0",
+    "langchain-anthropic>=0.1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --strict-markers"
+markers = [
+    "beginner: beginner level exercises (1-4)",
+    "intermediate: intermediate level exercises (5-8)",
+    "advanced: advanced level exercises (9-12)",
+    "unit: unit tests",
+    "integration: integration tests",
+]
+asyncio_mode = "auto"
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312", "py313"]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "W", "I"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
