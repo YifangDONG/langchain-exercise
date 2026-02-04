@@ -1,6 +1,12 @@
 # LangChain Learning Exercise Repository
 
-Learn LangChain through **12 progressive, test-driven exercises**—from beginner model invocation to advanced multi-agent systems.
+Learn LangChain through **18 progressive, test-driven exercises**—from beginner model invocation to production-ready RAG systems.
+
+**Now featuring TBR (Training from the Back of the Room) methodology:**
+- **CONNECTIONS** - Warm-up activities linking to prior knowledge
+- **CONCEPTS** - Focused mini-guides with visual diagrams
+- **CONCRETE PRACTICE** - Hands-on coding exercises with tests
+- **CONCLUSIONS** - Reflection prompts and skill checklists
 
 ## Installation
 
@@ -73,9 +79,9 @@ This repository teaches LangChain through a **test-driven learning approach**. E
 - **Progressive difficulty** building from basics to advanced patterns
 - **Real-world concepts** from production LangChain applications
 
-## 12 Exercises Overview
+## 18 Exercises Overview
 
-### 🟢 Beginner Level (Week 1)
+### 🟢 Beginner Level - LangChain Foundations (Week 1)
 | # | Exercise | Topics | Time |
 |---|----------|--------|------|
 | 1 | Model Basics | init, invoke, stream, batch | 1-2h |
@@ -85,7 +91,7 @@ This repository teaches LangChain through a **test-driven learning approach**. E
 
 **Learn**: Initialize models, build conversations, create tools, invoke agents.
 
-### 🟡 Intermediate Level (Week 2)
+### 🟡 Intermediate Level - Production Patterns (Week 2)
 | # | Exercise | Topics | Time |
 |---|----------|--------|------|
 | 5 | Tool Execution | Execution loops, error handling | 2-3h |
@@ -95,7 +101,7 @@ This repository teaches LangChain through a **test-driven learning approach**. E
 
 **Learn**: Execute tools safely, manage state, validate outputs, engineer prompts.
 
-### 🔴 Advanced Level (Week 3)
+### 🔴 Advanced Level - Complex Systems (Week 3)
 | # | Exercise | Topics | Time |
 |---|----------|--------|------|
 | 9 | Streaming | Real-time tokens, events | 2-3h |
@@ -105,13 +111,49 @@ This repository teaches LangChain through a **test-driven learning approach**. E
 
 **Learn**: Stream responses, manage memory, customize behavior, build multi-agent systems.
 
-## Learning Philosophy
+### 🚀 RAG Deep Dive - Build Production RAG (Week 4)
+| # | Exercise | Topics | Time |
+|---|----------|--------|------|
+| 13 | Document Loading | PDF, web, CSV loaders | 2-3h |
+| 14 | Text Chunking | Splitters, overlap, tokens | 2-3h |
+| 15 | Embeddings & Vectors | FAISS, Chroma, similarity | 2-3h |
+| 16 | Retrieval Chains | Basic RAG, multi-query | 3-4h |
+| 17 | Advanced RAG | Reranking, hybrid, HyDE | 3-4h |
+| 18 | RAG Evaluation | Metrics, RAGAS, A/B testing | 3-4h |
+
+**Learn**: Build production-quality RAG systems from document loading to evaluation.
+
+## Learning Philosophy (TBR Methodology)
+
+This repository uses **Training from the Back of the Room** (TBR) methodology:
+
+### The 4 C's Framework
+
+```
+┌────────────────────────────────────────────────────────────────────┐
+│  1. CONNECTIONS (5 min)  │  Connect to what you already know       │
+│     📖 Read: XX_CONNECTIONS.md before starting                     │
+├────────────────────────────────────────────────────────────────────┤
+│  2. CONCEPTS (15 min)    │  Learn new concepts with visuals        │
+│     📖 Read: docs/concepts/XX_*.md                                 │
+├────────────────────────────────────────────────────────────────────┤
+│  3. CONCRETE PRACTICE    │  Hands-on coding with tests             │
+│     💻 Code: src/exercises/XX_*.py                                 │
+│     🧪 Test: pytest tests/test_XX_*.py                             │
+├────────────────────────────────────────────────────────────────────┤
+│  4. CONCLUSIONS (5 min)  │  Reflect and celebrate learning         │
+│     📖 Read: XX_CONCLUSIONS.md after completing                    │
+└────────────────────────────────────────────────────────────────────┘
+```
+
+### Core Principles
 
 ✅ **Test-Driven**: Implement functions to pass comprehensive tests  
-✅ **Progressive**: Build from basics to advanced patterns  
+✅ **Progressive**: Build from basics to production RAG systems  
+✅ **Visual**: Diagrams and analogies for every concept  
 ✅ **Practical**: Real-world scenarios and patterns  
 ✅ **Self-Paced**: Work through exercises at your own speed  
-✅ **Comprehensive**: All major LangChain features covered  
+✅ **Hints Available**: Get unstuck with progressive hints  
 
 ## IDE Setup (Optional)
 
@@ -154,32 +196,65 @@ uv run pytest tests/ -v
 
 ## How to Use This Repository
 
-### Basic Workflow
+### TBR Learning Workflow
 
-1. **Open Exercise File**
+1. **CONNECTIONS - Warm Up (5 min)**
    ```bash
-   code src/exercises/01_model_basics.py
+   # Read the connections file first
+   cat src/exercises/01_CONNECTIONS.md
    ```
+   - Reflect on prior knowledge
+   - Understand the real-world analogy
+   - Check prerequisites
 
-2. **Read TODO Blocks**
-   - Each exercise has clear TODO comments
-   - Understand requirements and hints
-   - Review the CONCEPTS section
-
-3. **Implement Functions**
-   - Fill in the `pass` statements
-   - Follow docstring requirements
-   - Keep tests in mind
-
-4. **Run Tests**
+2. **CONCEPTS - Learn (15 min)**
    ```bash
+   # Read the focused concept guide
+   cat docs/concepts/01_model_basics.md
+   ```
+   - Study the visual diagrams
+   - Review code examples
+   - Understand key takeaways
+
+3. **CONCRETE PRACTICE - Code (30-60 min)**
+   ```bash
+   # Open and implement the exercise
+   code src/exercises/01_model_basics.py
+   
+   # Run tests as you go
    uv run pytest tests/test_01_model_basics.py -v
    ```
+   - Fill in the `pass` statements
+   - Use hints if stuck (see below)
+   - Iterate until tests pass ✅
 
-5. **Fix Failures & Iterate**
-   - Read test error messages carefully
-   - Adjust implementation
-   - Rerun tests until all pass ✅
+4. **CONCLUSIONS - Reflect (5 min)**
+   ```bash
+   # Read the conclusions file
+   cat src/exercises/01_CONCLUSIONS.md
+   ```
+   - Check off skills learned
+   - Answer reflection questions
+   - Review mini-project challenge
+
+### Using the Hints System
+
+If you get stuck, use the progressive hints:
+
+```python
+# In Python REPL or Jupyter
+from src.utils.hints import hint, HintHelper
+
+# Get a hint for any function
+hint("initialize_model")       # First hint
+hint("initialize_model", 2)    # Second hint
+
+# Or use interactive helper
+helper = HintHelper("basic_rag_chain")
+helper.next()    # Get hints one at a time
+helper.next()
+helper.approach() # See solution approach
+```
 
 ### Exercise Structure
 ```python
@@ -240,8 +315,13 @@ uv run pytest tests/ -v
 ### By Difficulty
 ```bash
 uv run pytest tests/ -m beginner      # Exercises 1-4
-uv run pytest tests/ -m intermediate  # Exercises 5-8
-uv run pytest tests/ -m advanced      # Exercises 9-12
+uv run pytest tests/ -m intermediate  # Exercises 5-8  
+uv run pytest tests/ -m advanced      # Exercises 9-18 (includes RAG)
+```
+
+### RAG Exercises Only
+```bash
+uv run pytest tests/test_13*.py tests/test_14*.py tests/test_15*.py tests/test_16*.py tests/test_17*.py tests/test_18*.py -v
 ```
 
 ### Specific Exercise
@@ -265,31 +345,42 @@ uv run pytest tests/ --cov=src --cov-report=html
 ```
 langchain-exercise/
 ├── src/
-│   ├── exercises/        # 12 exercise files with TODOs
+│   ├── exercises/           # 18 exercise files with TODOs
 │   │   ├── 01_model_basics.py
-│   │   ├── 02_messages.py
+│   │   ├── 01_CONNECTIONS.md   # TBR: Prior knowledge warm-up
+│   │   ├── 01_CONCLUSIONS.md   # TBR: Reflection & celebration
 │   │   ├── ...
-│   │   └── 12_advanced_workflows.py
-│   ├── utils/            # Helper functions and fixtures
-│   │   ├── helpers.py
-│   │   ├── mock_data.py
-│   │   └── test_fixtures.py
-│   └── solutions/        # Reference solutions (optional)
-├── tests/                # Test suite for each exercise
-│   ├── CONCEPTS.md       # Core LangChain concepts with diagrams
-│   └── UV_GUIDE.md       # Comprehensive uv package manager guide
-├── .env.example          # Example environment configurations
-├── examples/             # Real-world example applications
+│   │   ├── 12_advanced_workflows.py
+│   │   ├── 13_document_loading.py     # RAG: Document ingestion
+│   │   ├── 14_text_chunking.py        # RAG: Chunking strategies
+│   │   ├── 15_embeddings_vectorstores.py  # RAG: Vector search
+│   │   ├── 16_retrieval_chains.py     # RAG: RAG patterns
+│   │   ├── 17_advanced_rag.py         # RAG: Reranking, HyDE
+│   │   └── 18_rag_evaluation.py       # RAG: Metrics & testing
+│   └── utils/               # Helper functions and fixtures
+│       ├── helpers.py
+│       ├── mock_data.py
+│       ├── test_fixtures.py
+│       └── hints.py         # Progressive hints system
+├── tests/                   # Test suite for each exercise
+│   ├── test_01_model_basics.py
+│   ├── ...
+│   └── test_18_evaluation.py
+├── docs/
+│   ├── CONCEPTS.md          # Master concepts document
+│   ├── UV_GUIDE.md          # Package manager guide
+│   └── concepts/            # Per-exercise concept guides
+│       ├── 01_model_basics.md
+│       ├── 13_document_loading.md
+│       ├── 15_embeddings.md
+│       └── ...
+├── examples/                # Real-world example applications
 │   ├── weather_agent.py
 │   ├── research_assistant.py
 │   └── data_processor.py
-├── docs/                 # Detailed documentation
-│   ├── SETUP.md
-│   ├── CONCEPTS.md
-│   └── UV_GUIDE.md
-├── pyproject.toml        # Project configuration
-├── pytest.ini            # Pytest configuration
-└── README.md             # This file
+├── pyproject.toml           # Project configuration
+├── pytest.ini               # Pytest configuration
+└── README.md                # This file
 ```
 
 ## Using Mock Data
@@ -381,8 +472,9 @@ uv run python examples/data_processor.py
 
 ## Learning Outcomes
 
-After completing all 12 exercises, you'll understand:
+After completing all 18 exercises, you'll understand:
 
+### LangChain Foundations (Exercises 1-12)
 - ✅ How to initialize and use LangChain models
 - ✅ Message types and conversation management
 - ✅ Creating and using tools effectively
@@ -395,6 +487,16 @@ After completing all 12 exercises, you'll understand:
 - ✅ Memory and state persistence
 - ✅ Custom middleware and monitoring
 - ✅ Multi-agent systems and orchestration
+
+### RAG Mastery (Exercises 13-18)
+- ✅ Loading documents from PDF, web, CSV, and more
+- ✅ Text chunking strategies for optimal retrieval
+- ✅ Creating embeddings and managing vector stores
+- ✅ Building RAG chains (basic, conversational, multi-query)
+- ✅ Advanced techniques (reranking, hybrid search, HyDE)
+- ✅ Evaluating and optimizing RAG systems
+
+**Goal Achieved**: Build production-quality RAG systems! 🎉
 
 ## Resources
 
@@ -409,15 +511,34 @@ This project is open source and available under the MIT License.
 ## Key Features
 
 🎯 **Test-Driven Learning** - Comprehensive test suites validate your work  
-📚 **Progressive Difficulty** - Beginner → Intermediate → Advanced  
+📚 **Progressive Difficulty** - Beginner → Intermediate → Advanced → RAG  
 🔧 **Real-World Patterns** - Production-ready implementations, not toys  
-💡 **Clear Documentation** - Each exercise explains concepts and requirements  
-🚀 **Practical Skills** - Learn patterns used in real LangChain applications  
+💡 **TBR Methodology** - CONNECTIONS, CONCEPTS, PRACTICE, CONCLUSIONS  
+🚀 **Complete RAG Curriculum** - From document loading to evaluation  
 🤖 **Mock Support** - Test without API keys using intelligent mocks  
-📊 **Comprehensive Coverage** - All major LangChain features included
+💬 **Progressive Hints** - Get unstuck without spoiling solutions  
+📊 **Visual Learning** - Diagrams and analogies for every concept
+
+---
+
+## RAG Learning Path
+
+If your goal is to build RAG systems, follow this optimized path:
+
+```
+Week 1: Foundations        Week 2: RAG Core           Week 3: Production RAG
+┌──────────────────┐      ┌──────────────────┐      ┌──────────────────┐
+│ Ex 1: Models     │      │ Ex 13: Loading   │      │ Ex 17: Advanced  │
+│ Ex 2: Messages   │ ───▶ │ Ex 14: Chunking  │ ───▶ │ Ex 18: Evaluation│
+│ Ex 7: Structured │      │ Ex 15: Vectors   │      │                  │
+│ Ex 8: Prompts    │      │ Ex 16: RAG Chain │      │ Final Project!   │
+└──────────────────┘      └──────────────────┘      └──────────────────┘
+```
 
 ---
 
 **Happy learning! 🚀**
 
 Start with Exercise 1: `src/exercises/01_model_basics.py`
+
+Or jump to RAG: `src/exercises/13_document_loading.py`
