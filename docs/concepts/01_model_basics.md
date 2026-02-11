@@ -63,5 +63,9 @@ Use 1.0+for: Creative writing, brainstorming
 
 Explain in your own words:
 1. When would you use `stream()` instead of `invoke()`?
+    stream: chat interface, early termination, human waiting for long responses
+    invoke: complete response like structured JSON, background processing, simpler
 2. What does temperature=0 mean practically?
+    almost same input same output. used for code generation, unit tests the output, etc
 3. Why use `init_chat_model()` instead of `ChatOpenAI()`?
+    one entry point, switch the model by config, provide agnostic code

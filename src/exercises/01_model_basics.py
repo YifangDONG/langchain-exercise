@@ -50,7 +50,9 @@ def initialize_model(model_name: str = "openai/gpt-4-turbo") -> Any:
     Returns:
         Initialized chat model object
     """
-    pass
+    from langchain import init_chat_model
+    model = init_chat_model(model_name)
+    return model
 
 
 def invoke_model(model: Any, prompt: str) -> str:
@@ -69,7 +71,8 @@ def invoke_model(model: Any, prompt: str) -> str:
     Returns:
         Model response as string
     """
-    pass
+    for chunk in model.stream(prompt):
+        yield chunk.content
 
 
 def stream_model(model: Any, prompt: str) -> Iterator[str]:

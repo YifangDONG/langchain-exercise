@@ -69,9 +69,9 @@ Before coding, try this mental exercise:
 > - Process many customer queries efficiently (batch)
 
 Write your answers here (or just think about them):
-1. invoke: _______________
-2. stream: _______________
-3. batch: _______________
+1. invoke: give summary
+2. stream: provide a chatbot to for client
+3. batch: ask user to upload docs or provide information
 
 ---
 
